@@ -5,6 +5,50 @@
     rgba(0, 0, 0, 0.04) 0px 8px 4px,
     rgba(0, 0, 0, 0.04) 0px 16px 8px,
     rgba(0, 0, 0, 0.04) 0px 32px 16px;
-  height: 100px;
+  padding: 0 200px;
+	height: 10vh;
 	background-color: #f7faf2;
+	max-width: 1440px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+
+	&__logo-and-title {
+		display: flex;
+		gap: 5px;
+		text-decoration: none;
+		align-items: center;
+	}
+	
+	&__logo {
+		height: 60px;
+		width: 60px;
+	}
+	
+	&__title {
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #06ba4b;
+	}
+	
+	&__date {
+		display: flex;
+		align-items: center;
+		font-size: 12px;
+		gap: 6px;
+		color: grey;
+	}
+
+	&__today {
+		font-size: 12px;
+		position: absolute;
+		top: 14px;
+	}
+
+	&__clock-icon {
+		width: 16px;
+		height: 16px;
+	}
 }
