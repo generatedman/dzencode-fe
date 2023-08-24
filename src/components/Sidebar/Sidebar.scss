@@ -1,0 +1,15 @@
+.sidebar {
+	height: 90vh;
+	width: 15%;
+  box-shadow: 15px 0px 20px -15px rgba(0,0,0,0.75);
+	padding-top: 60px;
+	
+	&__user-photo {
+		border-radius: 50%;
+		width: 140px;
+		height: 140px;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
