@@ -2,10 +2,15 @@
 	height: 60px;
 	background-color: white;
 	border-radius: 5px;
-	display: flex;
-	gap: 25px;
-	align-items: center;
 	padding: 0 30px;
+	color: rgb(108, 108, 108);
+	border: 1px solid rgb(225, 224, 224);
+	font-size: 14px;
+	max-width: 1200px;
+
+	&__serial-number {
+		font-size: 12px;
+	}
 
 	&__indicator {
 		display: block;
@@ -18,5 +23,34 @@
 	&__image {
 		width: 35px;
 		height: 30px;
+	}
+
+	&__title {
+		color: rgb(59, 59, 59);
+		font-size: 16px;
+		text-decoration: underline;
+		width: 240px;
+		text-decoration-color: rgb(194, 192, 191);
+	}
+	
+
+	&__type {
+		font-size: 16px;
+	}
+
+	&__price {
+		font-weight: bold;
+		width: 80px;
+	}
+
+	&__order-name {
+		display: block;
+		max-width: 200px;
+		text-decoration: underline;
+	}
+
+	&__trash-bin-icon {
+		width: 20px;
+		height: 20px;
 	}
 }

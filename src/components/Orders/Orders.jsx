@@ -1,9 +1,28 @@
-import './Products.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { set } from '../../features/products/productsSlice';
-import { useEffect } from 'react';
-import { Dropdown } from '../Dropdown';
+import { Order } from '../Order';
 import { ProductsList } from '../ProductsList';
+import './Orders.scss';
+import { useSelector } from 'react-redux';
+
+const orders = [
+  {
+    id: 1,
+    title: 'Order 1',
+    date: '2017-06-29 12:09:33',
+    description: 'desc',
+  },
+  {
+    id: 2,
+    title: 'Order 2',
+    date: '2017-06-29 12:09:33',
+    description: 'desc',
+  },
+  {
+    id: 3,
+    title: 'Order 3',
+    date: '2017-06-29 12:09:33',
+    description: 'desc',
+  },
+];
 
 const productsFromServer = [
   {
@@ -84,27 +103,28 @@ const productsFromServer = [
   },
 ];
 
-export const Products = () => {
-  const dispatch = useDispatch();
-  
-	useEffect(() => {
-		dispatch(set(productsFromServer));
-	}, [dispatch]);
 
+export const Orders = () => {
 	let actualProducts = useSelector((state) => state.products.products);
-	let productType = useSelector((state) => state.productType.type);
+	let isProductListOpened = useSelector((state) => state.order.id);
 
-	if (productType !== 'Choose type') {
-		actualProducts = actualProducts.filter((product) => product.type === productType);
-	}
-
-  return (
-    <section className='products'>
-      <h2 className='products__title'>Products / {actualProducts.length}</h2>
-			<Dropdown />
-			<div className='products__items d-flex gap-2 flex-column'>
-				<ProductsList products={actualProducts}/>
+	return (
+    <section className='orders'>
+      <h2 className='orders__title'>Orders / {orders.length}</h2>
+      <div className='container d-flex gap-1'>
+        <div className='orders__list d-flex gap-2 flex-column'>
+          {orders.map((order) => {
+            return (
+              <>
+                <Order key={order.id} orderDetails={order} />
+              </>
+            );
+          })}
+        </div>
+        <div className='orders__products-list'>
+          <ProductsList products={actualProducts} />
+        </div>
       </div>
     </section>
   );
-};
+}

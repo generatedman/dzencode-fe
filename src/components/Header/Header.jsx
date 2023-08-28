@@ -21,18 +21,16 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className='header'>
-      <a href='#' className='header__logo-and-title'>
+    <header className='header d-flex justify-content-between  align-items-center'>
+      <a href='#' className='header__logo-and-title d-flex align-items-center'>
         <img src={userIcon} alt='user-logo' className='header__logo' />
-				<h3 className='header__title'>
-					Inventory
-				</h3>
-			</a>
-      <div className='header__date'>
+        <h3 className='header__title'>Inventory</h3>
+      </a>
+      <div className='header__date gap-1 d-flex align-items-center'>
         <span className='header__today'>Today</span>
         <span className='header__date'>{date}</span>
         <img src={clockIcon} alt='clock icon' className='header__clock-icon' />
-				<span className='header__time'>{time}</span>
+        <span className='header__time'>{time}</span>
       </div>
     </header>
   );
