@@ -1,0 +1,22 @@
+.product {
+	height: 60px;
+	background-color: white;
+	border-radius: 5px;
+	display: flex;
+	gap: 25px;
+	align-items: center;
+	padding: 0 30px;
+
+	&__indicator {
+		display: block;
+		width: 6px;
+		height: 6px;
+		background-color: rgb(18, 219, 92);
+		border-radius: 50%;
+	}
+
+	&__image {
+		width: 35px;
+		height: 30px;
+	}
+}

@@ -24,9 +24,9 @@ export const Header = () => {
     <header className='header'>
       <a href='#' className='header__logo-and-title'>
         <img src={userIcon} alt='user-logo' className='header__logo' />
-				<h1 className='header__title'>
+				<h3 className='header__title'>
 					Inventory
-				</h1>
+				</h3>
 			</a>
       <div className='header__date'>
         <span className='header__today'>Today</span>

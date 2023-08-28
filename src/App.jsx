@@ -1,14 +1,21 @@
 import './styles/reset.scss';
-import { Header } from './components/Header';
-import { Sidebar } from './components/Sidebar';
+import { Layout } from './components/Layout';
+import { Products } from './components/Products';
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Sidebar />
-    </>
-  );
-};
+import {RouterProvider, createHashRouter } from 'react-router-dom';
 
-export default App;
+
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/products',
+        element: <Products />,
+      },
+    ],
+  },
+]);
+
+export const App = () => <RouterProvider router={router} />;
