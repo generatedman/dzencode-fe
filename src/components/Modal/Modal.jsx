@@ -3,6 +3,7 @@ import productImage from '../../assets/images/pathToFile.webp';
 import { useDispatch, useSelector } from 'react-redux';
 import { choose } from '../../features/product/productSlice';
 import { set } from '../../features/products/productsSlice';
+import { deleteProduct } from '../../api/api';
 
 export const Modal = ({ 
 	productName = null, 
@@ -10,16 +11,19 @@ export const Modal = ({
 	productId = null, 
 }) => {
   const dispatch = useDispatch();
-	const products = useSelector((state) => state.products.products);
   
 	const handleCancel = () => {
     dispatch(choose(null));
   };
 
-  const handleDelete = (id) => {
-		const actualProducts = products.filter(product => product.id !== id);
+  const actualProducts = useSelector((state) => state.products.products);
+	
+	const handleDelete = async (id) => {
+		await deleteProduct(id);
 		
-		dispatch(set(actualProducts));
+		const filteredProducts = actualProducts.filter(product => product.id != id);
+		dispatch(set(filteredProducts));
+		
 		dispatch(choose(null));
   };
 
