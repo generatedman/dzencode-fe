@@ -7,7 +7,8 @@
 	border: 1px solid rgb(225, 224, 224);
 	font-size: 14px;
 	max-width: 1200px;
-
+	min-width: 800px;
+	
 	&__serial-number {
 		font-size: 12px;
 	}
@@ -52,5 +53,12 @@
 	&__trash-bin-icon {
 		width: 20px;
 		height: 20px;
+	}
+
+	&--orders-list {
+		border-radius: 0;
+		border: none;
+		border-bottom: 1px solid rgb(235, 235, 241);
+		height: 50px;
 	}
 }

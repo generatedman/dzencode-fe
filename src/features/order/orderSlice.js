@@ -9,9 +9,12 @@ export const orderSlice = createSlice({
     openProductIdList: (state, action) => {
       state.id = action.payload;
     },
+    closeProductIdList: (state) => {
+      state.id = null;
+    },
   },
 });
 
-export const { openProductIdList } = orderSlice.actions;
+export const { openProductIdList, closeProductIdList } = orderSlice.actions;
 
 export default orderSlice.reducer;
